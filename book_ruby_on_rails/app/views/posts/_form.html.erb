@@ -1,0 +1,72 @@
+<%= form_with(model: post) do |form| %>
+  <% if post.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+      <ul>
+        <% post.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :maSV269, style: "display: block" %>
+    <%= form.text_field :maSV269 %>
+  </div>
+
+  <div>
+    <%= form.label :hoTen269, style: "display: block" %>
+    <%= form.text_field :hoTen269 %>
+  </div>
+
+  <div>
+    <%= form.label :lop269, style: "display: block" %>
+    <%= form.text_field :lop269 %>
+  </div>
+
+  <div>
+    <%= form.label :maSach269, style: "display: block" %>
+    <%= form.text_field :maSach269 %>
+  </div>
+
+  <div>
+    <%= form.label :tenSach269, style: "display: block" %>
+    <%= form.text_field :tenSach269 %>
+  </div>
+
+  <div>
+    <%= form.label :tenTacGiac, style: "display: block" %>
+    <%= form.text_field :tenTacGiac %>
+  </div>
+
+  <div>
+    <%= form.label :tuSach269, style: "display: block" %>
+    <%= form.text_field :tuSach269 %>
+  </div>
+
+  <div>
+    <%= form.label :soBM, style: "display: block" %>
+    <%= form.text_field :soBM %>
+  </div>
+
+  <div>
+    <%= form.label :ngayMuon, style: "display: block" %>
+    <%= form.date_field :ngayMuon %>
+  </div>
+
+  <div>
+    <%= form.label :ngayTra, style: "display: block" %>
+    <%= form.date_field :ngayTra %>
+  </div>
+
+  <div>
+    <%= form.label :ghichu, style: "display: block" %>
+    <%= form.text_area :ghichu %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
