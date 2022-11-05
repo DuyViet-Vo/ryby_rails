@@ -1,14 +1,40 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Posts</h1>
-
-<div id="posts">
-  <% @posts.each do |post| %>
-    <%= render post %>
-    <p>
-      <%= link_to "Show this post", post %>
-    </p>
-  <% end %>
-</div>
+<h1>Hiển thị danh sách</h1>
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Mã sinh viên</th>
+      <th scope="col">Họ tên</th>
+      <th scope="col">Lớp</th>
+      <th scope="col">Mã Sách</th>
+      <th scope="col">Tên Sách</th>
+      <th scope="col">Tác giả</th>
+      <th scope="col">Số bảo mật</th>
+      <th scope="col">Ngày mượn</th>
+      <th scope="col">Ngày trả</th>
+      <th scope="col">Số ngày mượn</th>
+      <th scope="col">Ghi chú</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @posts.each do |post| %>
+      <tr>
+        <td><%= post.maSV269 %></td>
+        <td><%= post.hoTen269 %></td>
+        <td><%= post.lop269 %></td>
+        <td><%= post.maSach269 %></td>
+        <td><%= post.tenSach269 %></td>
+        <td><%= post.tenTacGiac %></td>
+        <td><%= post.tuSach269 %></td>
+        <td><%= post.soBM %></td>
+        <td><%= post.ngayMuon %></td>
+        <td><%= post.ngayTra %></td>
+        <td><%= post.ghichu %></td>
+        <td><%= link_to "Show this post", post %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
 
 <%= link_to "New post", new_post_path %>
